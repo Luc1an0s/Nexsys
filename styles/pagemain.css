@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    background: #222;
+    color: #fff;
+    padding: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.nome-sistema {
+    margin-left: 24px;
+}
+
+.container {
+    display: flex;
+    min-height: calc(100vh - 100px);
+}
+
+.nav {
+    width: 220px;
+    background-image: url(../img/fundo\ lilas.jpg);
+    min-height: 100vh;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li a {
+    display: block;
+    color: #fff;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.nav ul li a:hover {
+    background: #ffffff;
+    color: #000;
+}
+
+main {
+    flex: 1;
+    padding: 24px;
+    background: #f5f5f5;
+}
