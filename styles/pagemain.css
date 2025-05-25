@@ -6,7 +6,7 @@ body {
 
 header {
     width: 100%;
-    background: #222;
+    background-image: url(../img/fundo\ lilas.jpg);
     color: #fff;
     padding: 0;
     height: 60px;
