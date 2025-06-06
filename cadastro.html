@@ -8,10 +8,10 @@
 </head>
 <body>
     <main class="container">
-        <form>
+        <form id="formContato">
             <h1>Nexsys Cadastro</h1>
             <div class="input-box">
-                <input placeholder="Nome completo" type="text" required>
+                <input placeholder="Nome completo" type="text" name="name" required>
                 <i class="bx bxs-user"></i>
             </div>
 
@@ -21,7 +21,7 @@
             </div>
 
             <div class="input-box">
-                <input placeholder="E-mail" type="email" required>
+                <input placeholder="E-mail" type="email" name="email" required>
                 <i class="bx bxs-envelope"></i>
             </div>
 
@@ -31,7 +31,7 @@
             </div>
 
             <div class="input-box">
-                <input placeholder="Senha" type="password" required>
+                <input placeholder="Senha" type="password" name="password" required>
                 <i class="bx bxs-lock-alt"></i>
             </div>
 
@@ -49,5 +49,23 @@
             </div>
         </form>
     </main>
+    <script>
+        document.getElementById('formContato').onsubmit = async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const dados = {
+                name: form.name.value,
+                email: form.email.value,
+                password: form.password.value
+            };
+            const resp = await fetch('http://localhost:3000/usuarios', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dados)
+            });
+            const resultado = await resp.text();
+            alert(resultado);
+        };
+    </script>
 </body>
 </html>
